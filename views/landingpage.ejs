@@ -44,13 +44,22 @@ p {
   color: #666;
 }
 
-  .box2 {
+.box2 {
     display: flex;
-    align-items: center;
     justify-content: center;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
     overflow: hidden;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    height: auto;
+    width: 15rem;
+  }
+
+  .box2:hover {
+  transform: translateY(-5px);
   }
 
   .button2 {
@@ -225,70 +234,65 @@ p {
 
   <!-- Event categories -->
   <div class="bg-white h-screen">
-    <div class="inset-0 bg-red-100 rounded-[40px] h-5/6 m-24 p-3">
+    <div class="inset-0 bg-red-100 rounded-[40px] h-auto m-24 p-3">
       <h1 class="text-black text-center m-12 text-6xl font-bold">Practice Now</h1>
 
     <!-- Event listing -->
-    <div class="grid grid-cols-3 gap-4">
+    <div style="justify-content: center;" class=" grid grid-cols-3 gap-4 gap-x-0">
       <!-- Row 1 -->
-      <div class="box2">
+      <div class="box2 m-0 ">
         <form action="#" method="post">
           <button type="submit" class="button2">
             <img src="image1.jpg" alt="Image 1">
             <h2>Behavioral Health</h2>
-            <p>Description 12</p>
           </button>
         </form>
       </div>
-      <div class="box2">
+      <div class="box2 m-0">
         <form action="#" method="post">
           <button type="submit" class="button2">
             <img src="image2.jpg" alt="Image 2">
             <h2>Forensic Science</h2>
-            <p>Description 22</p>
           </button>
         </form>
       </div>
-      <div class="box2">
+      <div class="box2 m-0 ">
         <form action="#" method="post">
           <button type="submit" class="button2">
             <img src="image3.jpg" alt="Image 3">
             <h2>Medical Math</h2>
-            <p>Description 32</p>
           </button>
         </form>
       </div>
       
       <!-- Row 2 -->
-      <div class="box2">
+      <div class="box2 m-0">
         <form action="#" method="post">
           <button type="submit" class="button2">
             <img src="image4.jpg" alt="Image 4">
             <h2>Medical Spelling</h2>
-            <p>Description 42</p>
           </button>
         </form>
       </div>
-      <div class="box2">
+      <div class="box2 m-0">
         <form action="#" method="post">
           <button type="submit" class="button2">
             <img src="image5.jpg" alt="Image 5">
             <h2>Medical Terminology</h2>
-            <p>Description 52</p>
           </button>
         </form>
       </div>
-      <div class="box2">
+      <div class="box2 m-0">
         <form action="#" method="post">
           <button type="submit" class="button2">
             <img src="image6.jpg" alt="Image 6">
             <h2>Nutrition</h2>
-            <p>Description 62</p>
           </button>
         </form>
       </div>
+
     </div>
-  </div>
+    </div>
   </div>
 </body>
 
