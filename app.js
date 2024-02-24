@@ -384,19 +384,41 @@ app.post("/answers", (req, res) => {
 })
 
 
-app.get("/submit", (req, res) => {
-  if (req.isAuthenticated()) {
-    try {
-      const questionIdsArray = JSON.parse(req.query.questionIds);
-      const userAnswers = JSON.parse(req.query.userAnswers);
-      const results = JSON.parse(req.query.results);
-      const number = JSON.parse(req.query.number);
-      res.render("submit", { questionIds: questionIdsArray, userAnswers: userAnswers, results: results, number: number })
-    } catch (error) {
-      //////console.log(error)
-      res.redirect("/")
+app.get("/submit", async (req, res) => {
+  try {
+    if (req.isAuthenticated()) {
+      try {
+
+        let questionsId = JSON.parse(req.query.questionIds);
+        let userAnswers = JSON.parse(req.query.userAnswers);
+        let number = JSON.parse(req.query.number);
+        let results = JSON.parse(req.query.results);
+
+        const getQuestionsFromId = async () => {
+          let questionsArray = [];
+
+          for (var i = 0; i < number; i++) {
+            const questionFromDatabase = await questions.find({ _id: questionsId[i] }).exec();
+            await questionsArray.push(questionFromDatabase[0]);
+          }
+          return questionsArray;
+        }
+        const questionsArrayfromID = await getQuestionsFromId();
+
+        await res.render("submit", {questions: questionsArrayfromID, answers: userAnswers,
+           number: number, results: results });
+      } catch (error) {
+        res.redirect("/choice")
+      }
+    } else {
+      res.redirect("/login");
     }
-  } else {
-    res.redirect('/login');
+  } catch (error) {
+    //console.log(error)
+    res.redirect("/")
   }
-}); 
+})
+
+app.post("/done", (req,res)=>{
+  res.redirect("/landing-page");
+})
