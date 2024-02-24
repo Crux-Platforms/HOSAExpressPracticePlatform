@@ -181,7 +181,7 @@ app.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
-app.get('medical-math', (req, res) => {
+app.get('/medical-math', (req, res) => {
   if (req.isAuthenticated()) {
     res.render('medicalmath', { user: req.user });
   } else {
