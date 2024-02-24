@@ -13,7 +13,7 @@ const port = process.env.PORT || 5000;
 
 
 const store = new MongoDBStore({
-  uri: 'mongodb+srv://' + process.env.MONGOID+ 'hosa-demo.u9vtlvt.mongodb.net/HOSA',
+  uri: 'mongodb+srv://' + process.env.MONGOID + 'hosa-demo.u9vtlvt.mongodb.net/HOSA',
   collection: 'sessions', // Collection to store sessions
 });
 
