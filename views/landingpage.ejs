@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="" style="">
+<html lang="en" dir="ltr" class style>
 
-<head>
-  <title>HOSA</title>
-  <link href="./css/style.css" rel="stylesheet">
-</head>
+  <head>
+    <title>HOSA</title>
+    <link href="./css/style.css" rel="stylesheet">
+  </head>
 
-<style>
+  <style>
   .grid-container {
   display: flex;
   justify-content: space-between;
@@ -92,89 +92,132 @@ p {
   }
 </style>
 
-</style>
+  <body>
 
-<body>
-
-  <!-- navbar -->
-  <div class="max-w-2xl mx-auto">
-
-    <nav class="border-gray-200">
-      <div class="container mx-auto flex flex-wrap items-center justify-between">
-        <a href="#" class="flex">
-          <img width="120" height="70" class="" src="./hosalogo.png">
-        </a>
-        <button data-collapse-toggle="mobile-menu" type="button"
-          class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
-          aria-controls="mobile-menu-2" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"></path>
-          </svg>
-          <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </button>
-        <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
-          <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-            <li>
-              <a href="/landing-page"
-                class="bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded focus:outline-none"
-                aria-current="page">Home</a>
-            </li>
-            <li>
-              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Practice
-                <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"></path>
-                </svg></button>
-              <!-- Dropdown menu -->
-              <div id="dropdownNavbar"
-                class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
-                <!-- events name  -->
-                <ul class="py-1" aria-labelledby="dropdownLargeButton">
-                  <li>
-                    <a href="/medical-terminology" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Medical Terminology</a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">..</a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">..</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <a href="#"
-                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Conferences</a>
-            </li>
-            <li>
-              <a href="#"
-                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">My
-                Notebook</a>
-            </li>
-            <li>
-              <a href="#"
-                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Settings</a>
-            </li>
-          </ul>
+    <!-- navbar -->
+    <div class="max-w-2xl mx-auto">
+      <nav
+        class="fixed top-0 left-0 w-full bg-white z-50 border-b border-gray-200 px-8 sm:px-16 shadow-md">
+        <div
+          class="container mx-auto flex flex-wrap items-center justify-between">
+          <div>
+            <a href="#" class="flex">
+              <img width="120" height="70" class src="./hosalogo.png">
+            </a>
+          </div>
+          <div>
+            <button data-collapse-toggle="mobile-menu" type="button"
+              class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
+              aria-controls="mobile-menu-2" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <svg class="hidden w-6 h-6" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+            <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
+              <ul
+                class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+                <li>
+                  <a href="/landing-page"
+                    class="bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded focus:outline-none"
+                    aria-current="page">Home</a>
+                </li>
+                <li>
+                  <button id="dropdownNavbarLink"
+                    data-dropdown-toggle="dropdownNavbar"
+                    class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Practice
+                    <svg class="w-4 h-4 ml-1" fill="currentColor"
+                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                    </svg></button>
+                  <!-- Dropdown menu -->
+                  <div id="dropdownNavbar"
+                    class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
+                    <!-- events name  -->
+                    <ul class="py-1" aria-labelledby="dropdownLargeButton">
+                      <li>
+                        <a href="/medical-terminology"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Medical
+                          Terminology</a>
+                      </li>
+                      <li>
+                        <a href="/medical-math"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Medical
+                          Math</a>
+                      </li>
+                      <li>
+                        <a href="/behavioral-health"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Behavioral
+                          Health</a>
+                      </li>
+                      <li>
+                        <a href="/medical-spelling"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Medical
+                          Spelling</a>
+                      </li>
+                      <li>
+                        <a href="/nutrition"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Nutrition</a>
+                      </li>
+                      <li>
+                        <a href="/forensic-science"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Forensic
+                          Science</a>
+                      </li>
+                      <li>
+                        <a href="/dental-terminology" class="flex items-center text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">
+                          See more
+                          <img src="./rightarrow.png" alt="arrow" class="w-3 h-4 ml-1">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent
+                 md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Conferences</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0
+                block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">My
+                    Notebook</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent
+                 md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Settings</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
-  </div>
+      </div>
     </nav>
 
     <!-- Banner  -->
-    <div class="w-screen bg-slate-900 text-white h-[25rem] rounded py-4" style="background-image: url('./banner.png'); background-repeat: no-repeat; background-size: cover;">      <!-- Second Layer -->
-      <div class="inset-0 bg-black bg-opacity-60 rounded-[40px] my-20 mx-48 p-3">
-        <h2 class="text-2xl text-center font-semibold mb-10 pt-7">SLC Countdown</h2>
-        <div  class="flex text-white justify-around text-center [&>*>h2]:text-xl [&>*>h2]:sm:text-4xl [&>*>h2]:font-bold [&>*>p]:text-sm [&>*>p]:font-semibold">
+    <div class="w-screen bg-slate-900 text-white h-[25rem] rounded py-4 mt-8 "
+      style="background-image: url('./banner.png'); background-repeat: no-repeat; background-size: cover;">
+      <!-- Second Layer -->
+      <div
+        class="inset-0 bg-black bg-opacity-60 rounded-[40px] my-20 mx-48 p-3 ">
+        <h1 class="text-6xl text-center font-semibold mb-10 pt-7"> SLC
+          Countdown</h1>
+        <div
+          class="flex text-white justify-around text-center [&>*>h2]:text-xl [&>*>h2]:sm:text-4xl
+           [&>*>h2]:font-bold [&>*>p]:text-sm [&>*>p]:font-semibold">
           <div>
             <h2 id="month">2</h2>
             <p class=" text-white">Month</p>
@@ -208,95 +251,118 @@ p {
     </div>
 
     <!-- What this is div  -->
-  <div class="bg-white h-screen">
-    <h1 class="text-red-800 text-center m-12 text-6xl font-bold">HOSA Practice Portal</h1>
-    <div class="grid-container m-24 text-center">
-      <div class="box flex flex-col items-center">
-        <img class="w-20 h-20 object-center" src="./icon1.png" alt="Icon 1">
-        <h1>Questionbank</h1>
-        <p>All the questions you could need! Sorted by event with thousands of practice questions arranged randomly. Choose to practice with a timer and the number of
-          questions for your-custom exams with solutions for every question.
-        </p>
-      </div>
-      <div class="box flex flex-col items-center">
-        <img class="w-20 h-20 object-center" src="./icon2.png" alt="Icon 2">
-        <h1>Practice Exams</h1>
-        <p>Choose your revision tool! Contains questionbanks for focused study and HOSA mock exams covering the whole syllabus to practice for FLC, SLC and ILC!</p>
-      </div>
-      <div class="box flex flex-col items-center">
-        <img class="w-20 h-20 object-center" src="./icon3.png" alt="Icon 3">
-        <h1>Key Concepts</h1>
-        <p>Pick and choose specific areas of knowledge to practice questions about the most important concepts in your event!</p>
+    <div class="bg-white h-auto">
+      <h1 class="text-red-800 text-center m-12 text-6xl font-bold">HOSA Practice
+        Portal</h1>
+      <div class="grid-container m-24 text-center">
+        <div class="box flex flex-col items-center">
+          <img class="w-20 h-20 object-center" src="./icon1.png" alt="Icon 1">
+          <h1>Questionbank</h1>
+          <p>All the questions you could need! Sorted by event with thousands of
+            practice questions arranged randomly.
+            Choose to practice with a timer and the number of
+            questions for your-custom exams with solutions for every question.
+          </p>
+        </div>
+        <div class="box flex flex-col items-center">
+          <img class="w-20 h-20 object-center" src="./icon2.png" alt="Icon 2">
+          <h1>Practice Exams</h1>
+          <p>Choose your revision tool! Contains questionbanks for focused study
+            and HOSA mock exams covering the whole syllabus to practice for FLC,
+            SLC and ILC!</p>
+        </div>
+        <div class="box flex flex-col items-center">
+          <img class="w-20 h-20 object-center" src="./icon3.png" alt="Icon 3">
+          <h1>Key Concepts</h1>
+          <p>Pick and choose specific areas of knowledge to practice questions
+            about the most important concepts in your event!</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Event categories -->
-  <div class="bg-white h-screen">
-    <div class="inset-0 bg-red-100 rounded-[40px] h-auto m-24 p-3">
-      <h1 class="text-black text-center m-12 text-6xl font-bold">Practice Now</h1>
+    <!-- Event categories -->
+    <div
+      class="h-screen bg-cover  w-full bg-gradient-to-r from-red-500 via-red-600 to-red-700  py-4
+     flex flex-col items-center"
+      style="background-image:url(./bgs.png);">
+      <h1 class="text-center m-11 text-4xl text-white font-bold">The best
+        resources for HOSA</h1>
+      <h2 class="text-center mb-16 text-2xl text-white font-bold">Starting
+        practing today!</h2>
+      <div class="grid grid-cols-3 gap-12 ">
+        <div
+          class=" flex flex-col items-center  border border-gray-300 rounded-full shadow transition
+      duration-200 ease-in-out  pt-11 px-11 pb-4 bg-slate-100 w-96"
+          style="border-radius: 20px;">
+          <h2 class="mt-2 font-bold text-l text-center">Medical Terminology</h2>
+          <button
+            class="bg-white  hover:text-white text-gray-800 font-semibold py-2 px-4 border
+        border-gray-400 rounded shadow hover:bg-red-600 ease-in my-9"
+            style="border-radius: 12px;">Start</button>
 
-    <!-- Event listing -->
-    <div style="justify-content: center;" class=" grid grid-cols-3 gap-4 gap-x-0">
-      <!-- Row 1 -->
-      <div class="box2 m-0 ">
-        <form action="#" method="post">
-          <button type="submit" class="button2">
-            <img src="image1.jpg" alt="Image 1">
-            <h2>Behavioral Health</h2>
-          </button>
-        </form>
-      </div>
-      <div class="box2 m-0">
-        <form action="#" method="post">
-          <button type="submit" class="button2">
-            <img src="image2.jpg" alt="Image 2">
-            <h2>Forensic Science</h2>
-          </button>
-        </form>
-      </div>
-      <div class="box2 m-0 ">
-        <form action="#" method="post">
-          <button type="submit" class="button2">
-            <img src="image3.jpg" alt="Image 3">
-            <h2>Medical Math</h2>
-          </button>
-        </form>
-      </div>
+        </div>
+        <div
+          class=" flex flex-col items-center  border border-gray-300 rounded-full shadow transition
+         duration-200 ease-in-out  pt-11 px-11 pb-4 bg-slate-100 w-96"
+          style="border-radius: 20px;">
+          <h2 class="mt-2 font-bold text-l text-center">Medical Math</h2>
+          <button
+            class="bg-white  hover:text-white text-gray-800 font-semibold py-2 px-4 border
+           border-gray-400 rounded shadow hover:bg-red-600 ease-in my-9"
+            style="border-radius: 12px;">Start</button>
 
-      <!-- Row 2 -->
-      <div class="box2 m-0">
-        <form action="#" method="post">
-          <button type="submit" class="button2">
-            <img src="image4.jpg" alt="Image 4">
-            <h2>Medical Spelling</h2>
-          </button>
-        </form>
-      </div>
-      <div class="box2 m-0">
-        <form action="#" method="post">
-          <button type="submit" class="button2">
-            <img src="image5.jpg" alt="Image 5">
-            <h2>Medical Terminology</h2>
-          </button>
-        </form>
-      </div>
-      <div class="box2 m-0">
-        <form action="#" method="post">
-          <button type="submit" class="button2">
-            <img src="image6.jpg" alt="Image 6">
-            <h2>Nutrition</h2>
-          </button>
-        </form>
-      </div>
+        </div>
+        <div
+          class=" flex flex-col items-center  border border-gray-300 rounded-full shadow transition
+      duration-200 ease-in-out  pt-11 px-11 pb-4 bg-slate-100 w-96"
+          style="border-radius: 20px;">
+          <h2 class="mt-2 font-bold text-l text-center">Behavioral Health</h2>
+          <button
+            class="bg-white  hover:text-white text-gray-800 font-semibold py-2 px-4 border
+        border-gray-400 rounded shadow hover:bg-red-600 ease-in my-9"
+            style="border-radius: 12px;">Start</button>
 
+        </div>
+        <div
+          class=" flex flex-col items-center  border border-gray-300 rounded-full shadow transition
+   duration-200 ease-in-out  pt-11 px-11 pb-4 bg-slate-100 w-96"
+          style="border-radius: 20px;">
+          <h2 class="mt-2 font-bold text-l text-center">Medical Spelling</h2>
+          <button
+            class="bg-white  hover:text-white text-gray-800 font-semibold py-2 px-4 border
+     border-gray-400 rounded shadow hover:bg-red-600 ease-in my-9"
+            style="border-radius: 12px;">Start</button>
+
+        </div>
+        <div
+          class=" flex flex-col items-center  border border-gray-300 rounded-full shadow transition
+duration-200 ease-in-out  pt-11 px-11 pb-4 bg-slate-100 w-96"
+          style="border-radius: 20px;">
+          <h2 class="mt-2 font-bold text-l text-center">Nutrition</h2>
+          <button
+            class="bg-white  hover:text-white text-gray-800 font-semibold py-2 px-4 border
+  border-gray-400 rounded shadow hover:bg-red-600 ease-in my-9"
+            style="border-radius: 12px;">Start</button>
+
+        </div>
+        <div
+          class=" flex flex-col items-center  border border-gray-300 rounded-full shadow transition
+duration-200 ease-in-out  pt-11 px-11 pb-4 bg-slate-100 w-96"
+          style="border-radius: 20px;">
+          <h2 class="mt-2 font-bold text-l text-center">Forensic Science</h2>
+          <button
+            class="bg-white  hover:text-white text-gray-800 font-semibold py-2 px-4 border
+  border-gray-400 rounded shadow hover:bg-red-600 ease-in my-9"
+            style="border-radius: 12px;">Start</button>
+
+        </div>
+
+      </div>
     </div>
-    </div>
-  </div>
-</body>
+  </body>
 
+  <!-- javascript -->
 
-<!-- javascript -->
-
-<script src="./javascript/countdown.js"></script>
-<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+  <script src="./javascript/countdown.js"></script>
+  <script
+    src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
