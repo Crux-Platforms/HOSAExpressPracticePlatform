@@ -1,2 +1,4 @@
 /node_modules/*
 .env
+./question-extractor/questions/*
+./question-extractor/__pycache__/*

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {    
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tailwind:css": "postcss ./public/css/tailwind.css -o ./public/css/style.css"
   },
@@ -22,7 +22,8 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-local-mongoose": "^8.0.0",
     "postcss": "^8.4.35",
-    "postcss-cli": "^11.0.0"
+    "postcss-cli": "^11.0.0",
+    "querystring": "^0.2.1"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"

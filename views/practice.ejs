@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+
+  </head>
+
+  <body>
+
+
+    <section class="encapsule">
+      <h5 class="examHeading">Exam</h5>
+      <div class="timerCard">
+        <p id="time" style="display: none;"> <%= time %></p>
+        <% if(timerBoolean == "true"){ %>
+        <p id="number" style="display: none;"> <%= number %></p>
+        <h5 class="examHeading" id="demo"></h5>
+        <% } %>
+      </div>
+      <hr>
+
+      <div class="test">
+
+
+        <form id="testForm" action="/answers" method="post">
+
+          <% for(var i = 0; i < number; i++){ %>
+
+          <div class="questionCard">
+            <h6 class="mainQ"> <strong id="strong"><em><%= i+1 %>.</em></strong> <%=questions[i].Question %></h6>
+
+            <label class="inline-label">
+              <input type="radio"
+                style="margin-bottom: 13px; margin-right: 5px;" name=<%=i%>
+              value="A" required> <p class="answers"> <strong class="strong2"><em></em>A.</em></strong> <%=questions[i].OptionOne
+                %></p>
+            </label>
+            <br>
+            <label class="inline-label">
+              <input type="radio"
+                style="margin-bottom: 13px; margin-right: 5px;" name=<%=i%>
+              value="B" required> <p class="answers"><strong class="strong2"><em></em>B.</em></strong> <%=questions[i].OptionTwo
+                %></p>
+            </label>
+            <br>
+            <label class="inline-label">
+              <input type="radio"
+                style="margin-bottom: 13px; margin-right: 5px;" name=<%=i%>
+              value="C" required> <p class="answers"><strong class="strong2"><em></em>C.</em></strong> <%=questions[i].OptionThree
+                %></p>
+            </label>
+            <br>
+            <label class="inline-label">
+              <input type="radio"
+                style="margin-bottom: 13px; margin-right: 5px;" name=<%=i%>
+              value="D" required> <p class="answers"><strong class="strong2"><em></em>D.</em></strong> <%=questions[i].OptionFour
+                %></p>
+            </label>
+            <br>
+          <hr>
+          </div>
+
+          <% } %>
+<
+
+          <% var questionIds = questions.map(function(question) { return question._id; }); %>
+          <input type="hidden" name="questionIds" value=<%=JSON.stringify(questionIds) %>>
+          <input type="hidden" name="number" value=<%= JSON.stringify(number) %>>
+          <button type="submit" class="testButton"> Submit</button>
+
+        </form>
+
+      </div>
+    </section>
+    <script>
+
+      var number = document.getElementById("number").innerHTML;
+      var dateStr = parseInt(document.getElementById("time").innerHTML,10);
+      dateStr += (number * 60 * 1000 * 0.75)
+      var getSecond = setInterval(function() {
+
+        var now = new Date().getTime();
+        console.log(now)
+        var distance = dateStr - now;
+        console.log(distance)
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if(hours > 0){
+
+        document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+        } else{
+          document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
+        }
+
+        if (distance < 0) {
+          clearInterval(getSecond);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+          document.getElementById("testForm").submit();
+        }
+      }, 1000);
+
+
+
+//       var isCursorActive = true;
+
+//       window.addEventListener('blur', function() {
+//          isCursorActive = false;
+//        });
+
+//         window.addEventListener('focus', function() {
+//           isCursorActive = true;
+//         });
+//
+//       setInterval(function() {
+//           if (!isCursorActive) {
+     //      document.getElementById("testForm").submit();
+     //   }
+     // }, 100);
+      </script>
+  </body>
+
+</html>

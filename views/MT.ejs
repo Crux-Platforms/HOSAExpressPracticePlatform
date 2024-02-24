@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark" style="color-scheme: dark;">
+
+<head>
+  <title>HOSA</title>
+  <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <form method="post" action="/questions">
+
+    <div class="numberofQuestions">
+      <div>
+        <label id="questionLabel" for="question">Number of Questions:</label>
+        <select id="question" name="question" required>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="time">
+      <div>
+        <label id="limitLabel" for="timeLimit">Time Limit:</label>
+      </div>
+      <div class="timeLabel">
+        <input type="radio" id="timed" name="timeLimit" value="timed" required>
+        <label class="options" for="timed">Timed</label>
+      </div>
+      <div>
+        <input type="radio" id="noTime" name="timeLimit" value="none" required>
+        <label class="options" for="noTime">No Time</label>
+      </div>
+    </div>
+
+    <div class="buttonForChoice">
+      <button class="testButton" type="submit">Start</button>
+    </div>
+  </form>
+
+</body>
