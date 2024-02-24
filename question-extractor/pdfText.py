@@ -1,4 +1,5 @@
 import PyPDF2
+import re
 
 class pdfExtractor:
 
@@ -6,35 +7,20 @@ class pdfExtractor:
     self.pdf_file = open(path, 'rb')
     self.pdf_reader = PyPDF2.PdfReader(self.pdf_file)
     self.num_pages = len(self.pdf_reader.pages)
-    self.keyPage = False
-    self.keyPageIndex = self.getKeyPage()
+    self.keyPageIndex = 14
     self.questions = self.getQuestions()
     self.optionOnes = self.getOptionOne()
     self.optionTwos = self.getOptionTwo()
     self.optionThrees = self.getOptionThree()
     self.optionFours = self.getOptionFour()
-    self.answers = self.getCorrectOptions()
+    # self.answers = self.getCorrectOptions()
     self.pdf_file.close()
-
-  def getKeyPage(self):
-
-   for i in range(self.num_pages):
-     print(i)
-   for page_number in range(1,self.num_pages):
-    page = self.pdf_reader.pages[page_number]
-    text = page.extract_text()
-    for i in range(len(text)):
-        if i < len(text)-3:
-            if text[i] == "K" and text[i+1] == "E" and text[i + 2] == "Y":
-                keyPageIndex = page_number
-                print("Key Page Index: " + str(keyPageIndex))
-                return keyPageIndex
 
   def getQuestions(self):
     questions = []
     question = ""
     start_of_question = False
-    for page_number in range(0,self.keyPageIndex):
+    for page_number in range(0,self.keyPageIndex + 1):
       page = self.pdf_reader.pages[page_number]
       text = page.extract_text()
       for i in range(len(text)):
@@ -62,12 +48,13 @@ class pdfExtractor:
           if(character == "A" and i < (len(text)-1) and text[i+1] == "."):
             start_of_Option_One = True
           if(start_of_Option_One):
-            if(character == "\n"):
+            if(character == "\n" and re.search('[a-zA-Z]', optionOne[2:])
+                                               and( (text[i+1] == "B" and text[i+2] == "." )or (text[i+1: i+5] =="MEDI"))):
               if(optionOne[2:] != '  '):
                 optionOnes.append(optionOne[2:])
               optionOne = ""
               start_of_Option_One = False
-          if(start_of_Option_One == True):
+          if(start_of_Option_One):
             optionOne = optionOne + character
             #print(optionOnes)
     return optionOnes
@@ -80,11 +67,12 @@ class pdfExtractor:
         page = self.pdf_reader.pages[page_number]
         text = page.extract_text()
         for i in range(len(text)):
-          character = text[i];
+          character = text[i]
           if(character == "B" and i < (len(text)-1) and text[i+1] == "."):
             start_of_Option_Two = True
           if(start_of_Option_Two):
-            if(character == "\n"):
+            if(character == "\n" and re.search('[a-zA-Z]', optionTwo[2:])
+               and ((text[i+1] == "C") or (text[i+1: i+5] == "MEDI") )):
               if(optionTwo[2:] != '  '):
                 optionTwos.append(optionTwo[2:])
               optionTwo = ""
@@ -102,19 +90,22 @@ class pdfExtractor:
         page = self.pdf_reader.pages[page_number]
         text = page.extract_text()
         for i in range(len(text)):
-          character = text[i];
-          if(character == "C" and i < (len(text)-1) and text[i+1] == "."):
-            start_of_Option_Three = True
-          if(start_of_Option_Three):
-            if(character == "\n"):
-              if(optionThree[2:] != '  '):
-                optionThrees.append(optionThree[2:])
-              optionThree = ""
-              start_of_Option_Three = False
-          if(start_of_Option_Three == True):
-            optionThree = optionThree + character
-            #print(optionThrees)
-    #print(optionThrees)
+          character = text[i]
+          if(len(optionThrees) == 46):
+            optionThrees.append(" Epithelium ")
+          else:
+            if(character == "C" and i < (len(text)-1) and text[i+1] == "."):
+              start_of_Option_Three = True
+            if(start_of_Option_Three):
+              if(character == "\n" and re.search('[a-zA-Z]', optionThree[2:])
+                 and( (text[i+1] == "D" and text[i+2] == ".") or (text[i+1: i+5] == "MEDI"))):
+                if(optionThree[2:] != '  '):
+                  optionThrees.append(optionThree[2:])
+                optionThree = ""
+                start_of_Option_Three= False
+            if(start_of_Option_Three == True):
+              optionThree = optionThree + character
+              #print(optionOnes)
     return optionThrees
 
   def getOptionFour(self):
@@ -125,11 +116,18 @@ class pdfExtractor:
         page = self.pdf_reader.pages[page_number]
         text = page.extract_text()
         for i in range(len(text)):
-          character = text[i];
+          character = text[i]
           if(character == "D" and i < (len(text)-1) and text[i+1] == "."):
             start_of_Option_Four = True
           if(start_of_Option_Four):
-            if(character == "\n"):
+            if(character == "\n" and re.search('[a-zA-Z]', optionFour[2:])
+               and (
+                 (text[i+1].isdigit() and text[i+2] == ".")
+                 or (text[i+1].isdigit() and text[i+2].isdigit() and text[i+3] == "." )
+                 or (text[i+1].isdigit() and text[i+2].isdigit() and text[i+3].isdigit() and text[i+4] == "." )
+                 or text[i+1: i+5] =="MEDI"
+                 )):
+              # print(optionFour[2:])
               if(optionFour[2:] != '  '):
                 optionFours.append(optionFour[2:])
               optionFour = ""
