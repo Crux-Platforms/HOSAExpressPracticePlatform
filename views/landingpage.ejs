@@ -6,8 +6,93 @@
   <link href="./css/style.css" rel="stylesheet">
 </head>
 
+<style>
+  .grid-container {
+  display: flex;
+  justify-content: space-between;
+}
 
+.box {
+  width: calc(33.33% - 20px); /* Adjust as needed */
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  height: auto;
+}
 
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.box2 {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    height: auto;
+    width: 15rem;
+  }
+
+  .box2:hover {
+  transform: translateY(-5px);
+  }
+
+  .button2 {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .button:hover {
+    background-color: #f0f4f8;
+  }
+
+  .button2 img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .button2 h2 {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .button2 p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: #4a5568;
+  }
+</style>
+
+</style>
 
 <body>
 
@@ -15,102 +100,204 @@
   <div class="max-w-2xl mx-auto">
 
     <nav class="border-gray-200">
-    <div class="container mx-auto flex flex-wrap items-center justify-between">
+      <div class="container mx-auto flex flex-wrap items-center justify-between">
         <a href="#" class="flex">
           <img width="120" height="70" class="" src="./hosalogo.png">
         </a>
-        <button data-collapse-toggle="mobile-menu" type="button" class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center" aria-controls="mobile-menu-2" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        <button data-collapse-toggle="mobile-menu" type="button"
+          class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
+          aria-controls="mobile-menu-2" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
         </button>
         <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
-        <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+          <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
             <li>
-            <a href="/landing-page" class="bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded focus:outline-none" aria-current="page">Home</a>
+              <a href="/landing-page"
+                class="bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded focus:outline-none"
+                aria-current="page">Home</a>
             </li>
             <li>
-                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Practice <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
-                <!-- Dropdown menu -->
-                <div id="dropdownNavbar" class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
-                    <!-- events name  -->
-                  <ul class="py-1" aria-labelledby="dropdownLargeButton">
-                    <li>
-                      
-                        <a href="/medical-terminology" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Medical Terminology</a>
-
-                    </li>
-                    <li>
-                        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">..</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">..</a>
-                    </li>
-                    </ul>
-                </div>
+              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Practice
+                <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg></button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbar"
+                class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
+                <!-- events name  -->
+                <ul class="py-1" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="/medical-math" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Medical
+                      Math</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">..</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">..</a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li>
-            <a href="#" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Conferences</a>
+              <a href="#"
+                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Conferences</a>
             </li>
             <li>
-            <a href="#" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">My Notebook</a>
+              <a href="#"
+                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">My
+                Notebook</a>
             </li>
             <li>
-            <a href="#" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Settings</a>
+              <a href="#"
+                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Settings</a>
             </li>
-        </ul>
+          </ul>
         </div>
     </div>
+  </div>
     </nav>
-      <!-- First Layer -->
-       <div class="w-full sm:max-w-2xl bg-slate-900 text-white h-[25rem] px-4 rounded py-4">
-      <!-- Second Layer -->
-         <div id="new" style="background-image: url('./slc.jpg')"  >
 
-          <h2 class="text-2xl text-center font-semibold mb-10 pt-7">SLC Countdown</h2>
-          <div class="flex justify-around text-center [&>*>h2]:text-xl [&>*>h2]:sm:text-4xl [&>*>h2]:font-bold [&>*>p]:text-sm [&>*>p]:font-semibold">
-           <div>
-               <h2 id="month">2</h2>
-               <p>Month</p>
-           </div>
-
-            <div>
-                <h2 id="day">28</h2>
-                <p>days</p>
-            </div>
-
-            <div>
-                <h2 id="hour">5</h2>
-                <p>Hours</p>
-            </div>
-
-            <div>
-                <h2 id="minute">5</h2>
-                <p>Minutes</p>
-            </div>
-
-            <div>
-              <h2 id="second">5</h2>
-              <p>Seconds</p>
-            </div>
-         </div>
-      </div>
+    <!-- Banner  -->
+    <div class="w-screen bg-slate-900 text-white h-[25rem] rounded py-4" style="background-image: url('./banner.png'); background-repeat: no-repeat; background-size: cover;">      <!-- Second Layer -->
+      <div class="inset-0 bg-black bg-opacity-60 rounded-[40px] my-20 mx-48 p-3">
+        <h2 class="text-2xl text-center font-semibold mb-10 pt-7">SLC Countdown</h2>
+        <div  class="flex text-white justify-around text-center [&>*>h2]:text-xl [&>*>h2]:sm:text-4xl [&>*>h2]:font-bold [&>*>p]:text-sm [&>*>p]:font-semibold">
+          <div>
+            <h2 id="month">2</h2>
+            <p class=" text-white">Month</p>
           </div>
 
-      <div class="bg-grey">
-        <div class="container mx-auto"></div>
+          <div>
+            <h2 id="day">28</h2>
+            <p class=" text-white">Days</p>
+          </div>
 
+          <div>
+            <h2 id="hour">5</h2>
+            <p class=" text-white">Hours</p>
+          </div>
 
-</div>
+          <div>
+            <h2 id="minute">5</h2>
+            <p class=" text-white">Minutes</p>
+          </div>
 
+          <div>
+            <h2 id="second">5</h2>
+            <p class=" text-white">Seconds</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="bg-grey">
+      <div class="container mx-auto"></div>
+    </div>
 
+    <!-- What this is div  -->
+  <div class="bg-white h-screen">
+    <h1 class="text-red-800 text-center m-12 text-6xl font-bold">HOSA Practice Portal</h1>
+    <div class="grid-container m-24 text-center">
+      <div class="box flex flex-col items-center">
+        <img class="w-20 h-20 object-center" src="./icon1.png" alt="Icon 1">
+        <h1>Questionbank</h1>
+        <p>All the questions you could need! Sorted by event with thousands of practice questions arranged randomly. Choose to practice with a timer and the number of
+          questions for your-custom exams with solutions for every question.
+        </p>
+      </div>
+      <div class="box flex flex-col items-center">
+        <img class="w-20 h-20 object-center" src="./icon2.png" alt="Icon 2">
+        <h1>Practice Exams</h1>
+        <p>Choose your revision tool! Contains questionbanks for focused study and HOSA mock exams covering the whole syllabus to practice for FLC, SLC and ILC!</p>
+      </div>
+      <div class="box flex flex-col items-center">
+        <img class="w-20 h-20 object-center" src="./icon3.png" alt="Icon 3">
+        <h1>Key Concepts</h1>
+        <p>Pick and choose specific areas of knowledge to practice questions about the most important concepts in your event!</p>
+      </div>
+    </div>
+  </div>
 
+  <!-- Event categories -->
+  <div class="bg-white h-screen">
+    <div class="inset-0 bg-red-100 rounded-[40px] h-auto m-24 p-3">
+      <h1 class="text-black text-center m-12 text-6xl font-bold">Practice Now</h1>
+
+    <!-- Event listing -->
+    <div style="justify-content: center;" class=" grid grid-cols-3 gap-4 gap-x-0">
+      <!-- Row 1 -->
+      <div class="box2 m-0 ">
+        <form action="#" method="post">
+          <button type="submit" class="button2">
+            <img src="image1.jpg" alt="Image 1">
+            <h2>Behavioral Health</h2>
+          </button>
+        </form>
+      </div>
+      <div class="box2 m-0">
+        <form action="#" method="post">
+          <button type="submit" class="button2">
+            <img src="image2.jpg" alt="Image 2">
+            <h2>Forensic Science</h2>
+          </button>
+        </form>
+      </div>
+      <div class="box2 m-0 ">
+        <form action="#" method="post">
+          <button type="submit" class="button2">
+            <img src="image3.jpg" alt="Image 3">
+            <h2>Medical Math</h2>
+          </button>
+        </form>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="box2 m-0">
+        <form action="#" method="post">
+          <button type="submit" class="button2">
+            <img src="image4.jpg" alt="Image 4">
+            <h2>Medical Spelling</h2>
+          </button>
+        </form>
+      </div>
+      <div class="box2 m-0">
+        <form action="#" method="post">
+          <button type="submit" class="button2">
+            <img src="image5.jpg" alt="Image 5">
+            <h2>Medical Terminology</h2>
+          </button>
+        </form>
+      </div>
+      <div class="box2 m-0">
+        <form action="#" method="post">
+          <button type="submit" class="button2">
+            <img src="image6.jpg" alt="Image 6">
+            <h2>Nutrition</h2>
+          </button>
+        </form>
+      </div>
+
+    </div>
+    </div>
+  </div>
 </body>
 
 
 <!-- javascript -->
-
 
 <script src="./javascript/countdown.js"></script>
 <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
