@@ -9,15 +9,76 @@
 <style>
   body {
     background-image: url('./mt.png');
-      background-size: 100% auto;
+      background-size: 100% 100%;
       background-repeat: no-repeat;
       background-position: center;
       min-height: 100vh;
+      position: static;
   }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    z-index: -1;
+  }
+
+  .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 20rem;
+  background-color: #fff;
+  border-color: lightblue;
+  border-width: 1px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  height: auto;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.custom-select {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem; /* Adjust padding as needed */
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057; /* Text color */
+  background-color: #fff; /* Background color */
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 0.25rem; /* Border radius */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.custom-select:focus {
+  border-color: #80bdff; /* Border color on focus */
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Box shadow on focus */
+}
+
+.testButton {
+  display: block;
+  width: 100%;
+}
 
 </style>
 
-<body class="bg-white">
+<body style="background-color: white;">
   <div class="max-w-2xl mx-auto">
 
     <nav class="border-gray-200">
@@ -92,65 +153,55 @@
     </nav>
 
     <!-- Description of event -->
-<h1 class="text-black text-center m-12 text-6xl font-bold">Medical Terminology</h1>
-<h3 class="mx-48 my-12 text-bold text-gray-700 text-center" >Medical Terminology provides members with the opportunity to gain knowledge and skills regarding prefixes,
+<h1 class="text-black text-center text-6xl font-bold">Medical Terminology</h1>
+<h3 class="mx-48 my-12 text-bold text-gray-700 text-center">Medical Terminology provides members with the opportunity to gain knowledge and skills regarding prefixes,
   suffixes, word roots, as well as anatomy, physiology, pathophysiology and occupations related to the health
   field. This competitive event consists of a written test with tiebreaker questions and aims to inspire members to
   learn about terms used in health professions and health specialties.</h3>
 
+  <!-- form question starts -->
+  <div class="container">
+    <div class="box flex justify-center p-8 mb-12">
+      <form class="text-black" method="post" action="/questions">
+
+        <h2 class="text-center mb-9 text-4xl font-bold leading-9 tracking-tight text-gray-900">Get Started</h2>
+        <div class="text-left">
+          <div class="numberofQuestions mb-3">
+              <label id="questionLabel" for="question">Number of Questions:</label>
+              <select id="question" name="question" class="custom-select" required>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+          </div>
 
 
 
+        <div class="time mb-3">
+            <label id="limitLabel" for="timeLimit">Time Limit:</label>
+
+          <div class="timeLabel flex items-center mb-2">
+                <input type="radio" id="timed" name="timeLimit" value="timed" required class="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
+                <label class="options ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="timed">Timed</label>
+            </div>
+            <div class="timeLabel flex items-center mb-4">
+                <input type="radio" id="noTime" name="timeLimit" value="none" required class="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
+                <label class="options ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="noTime">No Time</label>
+            </div>
+        </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <form method="post" action="/questions">
-
-    <div class="numberofQuestions">
-      <div>
-        <label id="questionLabel" for="question">Number of Questions:</label>
-        <select id="question" name="question" required>
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="25">25</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-        </select>
+           <div class="buttonForChoice">
+          <button class="testButton text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4
+          focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5
+          me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" type="submit button">Start</button>
+        </div>
       </div>
+      </form>
     </div>
+  </div>
 
-    <div class="time">
-      <div>
-        <label id="limitLabel" for="timeLimit">Time Limit:</label>
-      </div>
-      <div class="timeLabel">
-        <input type="radio" id="timed" name="timeLimit" value="timed" required>
-        <label class="options" for="timed">Timed</label>
-      </div>
-      <div>
-        <input type="radio" id="noTime" name="timeLimit" value="none" required>
-        <label class="options" for="noTime">No Time</label>
-      </div>
-    </div>
-
-    <div class="buttonForChoice">
-      <button class="testButton" type="submit">Start</button>
-    </div>
-  </form>
 
 </body>
