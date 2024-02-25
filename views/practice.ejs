@@ -13,21 +13,26 @@
       padding-bottom: 1%;
     }
 
+    .e{
+      display: flex;
+      justify-content: right;
+      position: sticky;
+    }
+
     .timerCard {
-    position: sticky;
-    top: 0;
-    right: 0;
-    background-color: #be4b4b;
-    color: white;
-    text-align: center; /* Center text horizontally */
-    margin-bottom: 2em;
-    width: 7em;
-    border: 3px solid black;
-    border-radius: 20px;
-    font-size: 1.5em; /* Increase text size */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+      position: sticky;
+      top: 0;
+      background-color: #be4b4b;
+      color: white;
+      text-align: center; /* Center text horizontally */
+      margin-bottom: 2em;
+      width: 7em;
+      border: 3px solid black;
+      border-radius: 20px;
+      font-size: 1.5em; /* Increase text size */
+      display: flex;
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
 }
 
   </style>
@@ -38,13 +43,15 @@
     <section class="encapsule ">
       <h1 class="examHeadin text-red-800 text-center m-12 text-6xl font-bold">Exam</h1>
 
-      <div class="timerCard >
+      <div class="e">
+      <div class="timerCard " >
         <p id="time" style="display: none;"> <%= time %></p>
         <% if(timerBoolean == "true"){ %>
         <p id="number" style="display: none;"> <%= number %></p>
         <h5 class="examHeading" id="demo"></h5>
         <% } %>
       </div>
+    </div>
 
       <hr class="border-t-2 border-gray-400 my-1">
 
@@ -59,7 +66,7 @@
             <h6 class="mainQ text-xl mt-6 mb-3"> <strong id="strong"><em><%= i+1 %>.</em></strong> <%=questions[i].Question %></h6>
 
             <label class="inline-label w-full ">
-              <input type="radio" style="margin-right: 5px;" name=<%=i%> value="A" required> 
+              <input type="radio" style="margin-right: 5px;" name=<%=i%> value="A" required>
               <p class="answers ml-8 text-base"> <strong class="strong2"><em></em>A.</em></strong> <%=questions[i].OptionOne%></p>
             </label>
             <br>
@@ -92,9 +99,9 @@
           <% var questionIds = questions.map(function(question) { return question._id; }); %>
           <input type="hidden" name="questionIds" value=<%=JSON.stringify(questionIds) %>>
           <input type="hidden" name="number" value=<%= JSON.stringify(number) %>>
-    
+
           <div class="flex justify-center">
-          <button type="submit" class="testButton text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 
+          <button type="submit" class="testButton text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300
           font-medium rounded-full text-sm px-5 py-2.5
            text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 mt-3">Submit</button>
           </div>
