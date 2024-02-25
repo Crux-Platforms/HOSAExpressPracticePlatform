@@ -105,33 +105,66 @@
           <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
             <li>
               <a href="/landing-page"
-                class="bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded focus:outline-none"
-                aria-current="page">Home</a>
+                class= "text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto"
+                >Home</a>
+
             </li>
             <li>
               <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Practice
-                <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              class="bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded focus:outline-none">
+          <div class="flex items-center">
+              Practice
+              <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"></path>
-                </svg></button>
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"></path>
+              </svg>
+          </div>
+      </button>
               <!-- Dropdown menu -->
               <div id="dropdownNavbar"
-                class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
-                <!-- events name  -->
-                <ul class="py-1" aria-labelledby="dropdownLargeButton">
-                  <li>
-                    <a href="/medical-terminology" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Medical Terminology</a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">..</a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">..</a>
-                  </li>
-                </ul>
-              </div>
+                    class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
+                    <!-- events name  -->
+                    <ul class="py-1" aria-labelledby="dropdownLargeButton">
+                      <li>
+                        <a href="/medical-terminology"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Medical
+                          Terminology</a>
+                      </li>
+                      <li>
+                        <a href="/medical-math"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Medical
+                          Math</a>
+                      </li>
+                      <li>
+                        <a href="/behavioral-health"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Behavioral
+                          Health</a>
+                      </li>
+                      <li>
+                        <a href="/medical-spelling"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Medical
+                          Spelling</a>
+                      </li>
+                      <li>
+                        <a href="/nutrition"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Nutrition</a>
+                      </li>
+                      <li>
+                        <a href="/forensic-science"
+                          class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Forensic
+                          Science</a>
+                      </li>
+                      <li>
+                        <a href="/dental-terminology"
+                          class="flex items-center text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">
+                          See more
+                          <img src="./rightarrow.png" alt="arrow"
+                            class="w-3 h-4 ml-1">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
             </li>
             <li>
               <a href="#"
@@ -205,3 +238,5 @@
 
 
 </body>
+<script
+src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
