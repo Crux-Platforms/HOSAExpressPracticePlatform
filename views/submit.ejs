@@ -2,9 +2,110 @@
 <html lang="en" dir="ltr">
 
   <head>
-\
-
+    <title>HOSA</title>
+    <link href="./css/style.css" rel="stylesheet">
   </head>
+
+  <style>
+    
+    .inline-label {
+      display: inline-flex;
+      align-items: center;
+      padding-bottom: 1%;
+      margin-left: 5%;
+    }
+    
+    .resultsCard {
+        width: 40%;
+      }
+    
+    .title{
+      text-align: center;
+      margin-bottom: 0.5em;
+      font-family: 'Cabin', sans-serif;
+      color: grey;
+      font-size: 3rem;
+      padding: 3%;
+    }
+
+    .stats1{
+      font-size: 2em;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+    }
+
+    .stats {
+      font-size: 2em;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+
+    .containerForStats {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .test{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .red {
+    background-color: rgba(225, 0, 0, 0.5);
+    border-radius: 1rem;
+    padding: 1em;
+  }
+
+  .red {
+    background-color: rgba(225, 0, 0, 0.5);
+    border-radius: 1rem;
+    padding: 1em;
+  }
+
+  .green { 
+    background-color: rgba(0, 128, 0, 0.5);
+    border-radius: 1rem;
+    padding: 1em;
+  }
+
+  .green2 {
+      background-color: rgba(0, 128, 0, 0.5);
+      border-radius: 2rem;
+      box-shadow: 0 0 0 10px rgba(0, 128, 0, 0.5);
+  }
+
+  .questionCard{
+    /* Add the following styles to move the section to the right */
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 20px;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .dropdownToggle {
+    all: unset;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+  }
+
+  .dropdownArrow{
+    height: 25px;
+    width: 25px;
+  }
+
+  
+  .H{
+    display: none;
+  }
+
+
+  </style>
 
   <body>
 
@@ -39,8 +140,7 @@
 
           <div class="questionCard">
 
-            <h6
-              class="<%= questions[i].Answer === answers[i] ? 'green' : 'red' %> mainQ">
+            <h6 class="mainQ text-xl mt-6 mb-3 <%= questions[i].Answer === answers[i] ? 'green' : 'red' %> mainQ">
               <strong id="strong"><em><%= i+1 %>.</em></strong> <%=questions[i].Question %></h6>
             <button class="dropdownToggle" type="button">
               <img class="dropdownArrow" src="./drop-down-arrow.png">
@@ -49,10 +149,10 @@
             <div class="H optionToChose<%=i%>">
               <label class="inline-label">
                 <input type="radio"
-                  style="margin-bottom: 13px; margin-right: 5px;"
+                  style=" margin-right: 5px;"
                   name=<%=i%> value="A" required <% if(answers[i] === 'A') { %>
                 checked <%}else{%> disabled <%}%>>
-                <p class="<%= questions[i].Answer === 'A' ? 'green2' : '' %> answers"><strong class="strong2">A.</strong>
+                <p class="ml-8 text-base <%= questions[i].Answer === 'A' ? 'green2' : '' %> answers"><strong class="strong2">A.</strong>
                   <%= questions[i].OptionOne %></p>
               </label>
               <br>
@@ -60,10 +160,10 @@
             <div class="H optionToChose<%=i%>">
               <label class="inline-label">
                 <input type="radio"
-                  style="margin-bottom: 13px; margin-right: 5px;"
+                  style="margin-right: 5px;"
                   name=<%=i%> value="B" required <% if(answers[i] === 'B') { %>
                 checked <%}else{%> disabled <%}%>>
-                <p class="<%= questions[i].Answer === 'B' ? 'green2' : '' %> answers"><strong class="strong2">B.</strong>
+                <p class="ml-8 text-base <%= questions[i].Answer === 'B' ? 'green2' : '' %> answers"><strong class="strong2">B.</strong>
                   <%=questions[i].OptionTwo %></p>
               </label>
               <br>
@@ -71,10 +171,10 @@
             <div class="H optionToChose<%=i%>">
               <label class="inline-label">
                 <input type="radio"
-                  style="margin-bottom: 13px; margin-right: 5px;"
+                  style=" margin-right: 5px;"
                   name=<%=i%> value="C" required <% if(answers[i] === 'C') { %>
                 checked <%}else{%> disabled <%}%>>
-                <p class="<%= questions[i].Answer === 'C' ? 'green2' : '' %> answers"><strong class="strong2">C.</strong>
+                <p class="ml-8 text-base <%= questions[i].Answer === 'C' ? 'green2' : '' %> answers"><strong class="strong2">C.</strong>
                   <%=questions[i].OptionThree %></p>
               </label>
               <br>
@@ -82,10 +182,10 @@
             <div class="H optionToChose<%=i%>">
               <label class="inline-label">
                 <input type="radio"
-                  style="margin-bottom: 13px; margin-right: 5px;"
+                  style="margin-right: 5px;"
                   name=<%=i%> value="D" required <% if(answers[i] === 'D') { %>
                 checked <%}else{%> disabled <%}%>>
-                <p class="<%= questions[i].Answer === 'D' ? 'green2' : '' %> answers"><strong class="strong2">D.</strong>
+                <p class="ml-8 text-base <%= questions[i].Answer === 'D' ? 'green2' : '' %> answers"><strong class="strong2">D.</strong>
                   <%=questions[i].OptionFour %></p>
               </label>
               <br>
@@ -93,8 +193,12 @@
 
           </div>
           <% } %>
-          <button type="submit" class="testButton"> Home </button>
+          <div class="flex justify-center">
+          <button type="submit" class="testButton testButton text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 
+          font-medium rounded-full text-sm px-5 py-2.5
+           text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 mt-3"> Home </button>
         </form>
+        </div>
 
       </div>
     </section>
@@ -105,7 +209,7 @@
         elements[i].addEventListener('click', () => {
           const buttons = Array.from(document.getElementsByClassName('optionToChose' + i));
           buttons.forEach(e => {
-            e.classList.toggle('invisible');
+            e.classList.toggle('H');
           });
         });
       }
