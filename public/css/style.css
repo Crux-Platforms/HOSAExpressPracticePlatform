@@ -536,13 +536,11 @@ video {
   white-space: nowrap;
   border-width: 0;
 }
-<<<<<<< HEAD
-.static {
-  position: static;
-=======
 .invisible {
   visibility: hidden;
->>>>>>> main
+}
+.static {
+  position: static;
 }
 .fixed {
   position: fixed;
@@ -562,19 +560,11 @@ video {
 .z-10 {
   z-index: 10;
 }
-<<<<<<< HEAD
-.float-right {
-  float: right;
-}
-.m-0 {
-  margin: 0px;
-=======
 .z-50 {
   z-index: 50;
 }
 .m-11 {
   margin: 2.75rem;
->>>>>>> main
 }
 .m-12 {
   margin: 3rem;
@@ -590,13 +580,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
-<<<<<<< HEAD
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
-=======
->>>>>>> main
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -616,13 +603,11 @@ video {
 .mb-10 {
   margin-bottom: 2.5rem;
 }
-<<<<<<< HEAD
 .mb-12 {
   margin-bottom: 3rem;
-=======
+}
 .mb-16 {
   margin-bottom: 4rem;
->>>>>>> main
 }
 .mb-2 {
   margin-bottom: 0.5rem;
@@ -651,27 +636,23 @@ video {
 .ml-4 {
   margin-left: 1rem;
 }
-<<<<<<< HEAD
 .ml-8 {
   margin-left: 2rem;
 }
-.mt-3 {
-  margin-top: 0.75rem;
-=======
 .mt-2 {
   margin-top: 0.5rem;
->>>>>>> main
+}
+.mt-3 {
+  margin-top: 0.75rem;
 }
 .mt-4 {
   margin-top: 1rem;
 }
-<<<<<<< HEAD
 .mt-6 {
   margin-top: 1.5rem;
-=======
+}
 .mt-8 {
   margin-top: 2rem;
->>>>>>> main
 }
 .block {
   display: block;
@@ -837,15 +818,13 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
-<<<<<<< HEAD
 .border-gray-400 {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
-=======
+}
 .border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
->>>>>>> main
 }
 .border-gray-700 {
   --tw-border-opacity: 1;
@@ -875,25 +854,21 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
-.bg-red-100 {
-=======
-.bg-gray-300 {
->>>>>>> main
+.bg-red-700 {
   --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 .bg-slate-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-.bg-red-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 .bg-slate-900 {
   --tw-bg-opacity: 1;
@@ -951,15 +926,13 @@ video {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-<<<<<<< HEAD
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-=======
+}
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
->>>>>>> main
 }
 .py-1 {
   padding-top: 0.25rem;
@@ -1087,15 +1060,13 @@ video {
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-<<<<<<< HEAD
-.outline {
-  outline-style: solid;
-=======
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
->>>>>>> main
+}
+.outline {
+  outline-style: solid;
 }
 .outline-2 {
   outline-width: 2px;
@@ -1146,19 +1117,17 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
 .hover\:bg-gray-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
-.hover\:bg-red-800:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
-=======
 .hover\:bg-red-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
->>>>>>> main
+}
+.hover\:bg-red-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
