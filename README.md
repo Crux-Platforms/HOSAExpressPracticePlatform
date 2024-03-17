@@ -13,4 +13,5 @@ Features (user side)
 
 Features (to add first)
 - admin dashboard
-- some sort of ai thing?
+- ai generated answers
+- custom user database
